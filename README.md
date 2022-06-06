@@ -18,7 +18,7 @@
 
 # Full Stack Forumbus
 
-This Full Stack Web Application allows users to share their thoughts which the deem worthy of openly publicising as well as read posts from other users.
+This Full Stack Web Application allows users to share their thoughts which the deem worthy of openly publicizing as well as read posts from other users.
 
 ( This is as a milestone project for the Full Toolkit module of the Full Stack Web Development Course at Code Institute. )
 
@@ -42,6 +42,7 @@ User Stories:
 
 * As the owner of the website, I would like to be able to approve the posts before they are presented on the site.
 * As a user of the website, I would like to be able to register in order to be able to access full functionality of the application.
+* As a user of the website, I would like to be able to view the posts list so that I can choose which one to read.
 * As a user of the website, I would like to be able to see other people's posts.
 * As a user of the website, I would like to be able to write a post.
 * As a user of the website, I would like to be able to edit my posts.
@@ -63,6 +64,7 @@ A page where user can delete own post.
 
 Option for the owner to approve and manage posts.
 Option for the users to register at the website.
+Option for the users to see posts and choose to see it's content.
 Option for the users to write a post.
 Option for the users to edit the post that they have written.
 Option for the users to delete the post that they have written.
