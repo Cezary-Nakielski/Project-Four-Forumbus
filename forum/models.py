@@ -11,6 +11,7 @@ class Post(models.Model):
     )
     time = models.DateTimeField(auto_now=True)
     body = models.TextField()
+    approved = models.BooleanField(default=False)
 
     class Meta:
         ordering = ["-time"]
