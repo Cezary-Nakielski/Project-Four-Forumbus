@@ -2,5 +2,26 @@
 
 {% block content %}
 
+<section id="post-heading" class="container-fluid text-center">
+    <h1>Posts</h1>
+</section>
 
-{% endblock content %}
+<section id="post-main-content" class="container-fluid ">
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-12 col-md-6">
+            <div>
+                post body
+            </div>
+            <div>
+                username and date
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <button>update</button>
+            <button>delete</button>
+        </div>
+    </div>
+
+
+
+    {% endblock content %}
