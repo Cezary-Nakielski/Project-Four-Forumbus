@@ -25,17 +25,31 @@
                 </div>
             </div>
             {% endfor %}
-            <div class="col-sm-12 col-md-6">
-                <article class="intro-info">
-                    To create, edit or delete your post or to see the content of another persons post, you need to
-                    register.
-                    If you haven't done so yet, use the "Join Us" button in the navigation panel at the top of the page.
-                </article>
-            </div>
-            <!-- <button>
-    
-        </button> -->
+            {% if is_paginated %}
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    {% if page_obj.has_previous %}
+                    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+                    {% endif %}
+                    {% if page_obj.has_next %}
+                    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+        
+                    {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
         </div>
+    </div>
+</section>
+<div class="col-sm-12 col-md-6">
+    <article class="intro-info">
+        To create, edit or delete your post or to see the content of another persons post, you need to
+        register.
+        If you haven't done so yet, use the "Join Us" button in the navigation panel at the top of the page.
+    </article>
+</div>
+<!-- <button>
 
+</button> -->
 
         {% endblock %}
