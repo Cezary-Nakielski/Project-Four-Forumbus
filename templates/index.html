@@ -5,32 +5,37 @@
 <section id="main-heading" class="container-fluid text-center">
     <h1>Posts</h1>
 </section>
+
+<!-- Post Entries Column -->
 <section id="posts-list-index" class="container-fluid ">
     <div class="row d-flex justify-content-center">
+        {% for post in posts_list %}
         <div class="col-sm-12 col-md-6">
-            <div>
-                user title date
+            <div class="card text-center">
+                <div class="card-header">
+                    Post
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title post-title">{{ post.title }}</h5>
+                    <p class="card-text post-creator">Made by: {{ post.creator }}</p>
+                    <a href="#" class="btn btn-primary post-link">Post Content link</a>
+                </div>
+                <div class="card-footer text-muted">
+                    {{ post.time }}
+                </div>
             </div>
-            <div>
-                user title date
+            {% endfor %}
+            <div class="col-sm-12 col-md-6">
+                <article class="intro-info">
+                    To create, edit or delete your post or to see the content of another persons post, you need to
+                    register.
+                    If you haven't done so yet, use the "Join Us" button in the navigation panel at the top of the page.
+                </article>
             </div>
-            <div>
-                user title date
-            </div>
-            <div>
-                user title date
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6">
-            <article class="intro-info">
-                To create, edit or delete your post or to see the content of another persons post, you need to register.
-                If you haven't done so yet, use the "Join Us" button in the navigation panel at the top of the page.
-            </article>
-        </div>
-        <!-- <button>
+            <!-- <button>
     
         </button> -->
-    </div>
+        </div>
 
 
-    {% endblock %}
+        {% endblock %}
