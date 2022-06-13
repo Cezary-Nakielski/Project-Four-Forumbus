@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h1>{% trans "Sign In" %}</h1>
+
+      <p>{% blocktrans %}To create, edit or delete your post you need to
+        register. If you haven't done so yet, then <a class="link" href="{{ signup_url }}">Join Us</a>
+        here.{% endblocktrans %}</p>
+
+      <form class="login" method="POST" action="{% url 'account_login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

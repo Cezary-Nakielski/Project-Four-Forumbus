@@ -13,45 +13,45 @@
 {% else %}
 <div class="container-fluid intro-info-container">
     <div class="row">
-    <article class="intro-info">
-        To create, edit or delete your post or to see the content of another persons post, you need to
-        register.
-        If you haven't done so yet, use the "Join Us" button in the navigation panel at the top of the page.
-    </article>
+        <article class="intro-info">
+            To create, edit or delete your post, you need to
+            register. If you haven't done so yet, use the "Join Us" button in the navigation panel at the top of the
+            page.
+        </article>
     </div>
 </div>
 {% endif %}
 <!-- Post Entries Column -->
-    <div id="posts-list-index" class="container-fluid">
+<div id="posts-list-index" class="container-fluid">
     <div class="row d-flex justify-content-center">
         {% for post in post_list %}
 
-            <div class="card text-center">
-                <div class="card-body">
-                    <h5 class="card-title post-title">{{ post.title }}</h5>
-                    <p class="card-text post-creator">Made by: {{ post.creator }}</p>
-                    <a href="{% url 'post_content' post.slug  %}" class="btn btn-primary post-link">Read</a>
-                </div>
-                <div class="card-footer text-muted">
-                    {{ post.time }}
-                </div>
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title post-title">{{ post.title }}</h5>
+                <p class="card-text post-creator">Made by: {{ post.creator }}</p>
+                <a href="{% url 'post_content' post.slug  %}" class="btn btn-primary post-link">Read</a>
             </div>
-            {% endfor %}
-            {% if is_paginated %}
-            <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center">
-                    {% if page_obj.has_previous %}
-                    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-                    {% endif %}
-                    {% if page_obj.has_next %}
-                    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-        
-                    {% endif %}
-                </ul>
-            </nav>
-            {% endif %}
+            <div class="card-footer text-muted">
+                {{ post.time }}
+            </div>
         </div>
+        {% endfor %}
+        {% if is_paginated %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+                {% endif %}
+                {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
     </div>
 </div>
+</div>
 
-        {% endblock %}
+{% endblock %}
