@@ -26,5 +26,6 @@ class PostContent(View):
             "post_content.html",
             {
                 "post": post,
+                "post_form": PostForm()
             },
         )
