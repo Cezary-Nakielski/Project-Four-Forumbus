@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Post
 from .forms import PostForm
-from django.views.generic import CreateView, UpdateView, DeleteView
+from django.views.generic import CreateView
 
 # Class based view for displaying list of posts
 
@@ -27,23 +27,5 @@ class PostContent(View):
             "post_content.html",
             {
                 "post": post,
-            },
-        )
-
-
-class PostCreate(CreateView):
-    model = Post
-    form_class = PostForm
-    template_name = 'create.html'
-    success_url = '/'
-
-    def get(self, request, slug, *args, **kwargs):
-
-        return render(
-            request,
-            "create.html",
-            {
-                "post": post,
-                "post_form": PostForm()
             },
         )
