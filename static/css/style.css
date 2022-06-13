@@ -1,12 +1,16 @@
 body {
     background-color: #cacdd4;
-    
 }
 
 /* NAVIGATION STYLING */
 
 .navbar-fixed-top {
     height: 100px;
+}
+
+.navbar-nav {
+    font-family: 'Lato', sans-serif;
+    font-size: large;
 }
 
 .navbar-brand {
@@ -25,9 +29,18 @@ body {
 }
 
 .intro-info-container {
+    font-size: larger;
     margin-bottom: 2rem;
 }
 
 .intro-info {
     font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+.post-title {
+    font-size:xx-large;
+}
+
+.post-creator {
+    font-size: x-large;
 }
