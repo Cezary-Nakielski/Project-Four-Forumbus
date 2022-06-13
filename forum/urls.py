@@ -1,6 +1,6 @@
 from . import views
 from django.urls import path
-from views import PostCreate
+from forum.views import PostCreate
 
 urlpatterns = [
     path("", views.PostsList.as_view(), name="homepage"),

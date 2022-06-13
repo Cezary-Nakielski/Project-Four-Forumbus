@@ -8,13 +8,13 @@
 {% if user.is_authenticated %}
 
 <!-- Button shown to logged in users, used to create a post -->
-<!-- <button>
+<a class="btn btn-primary" href="{% url 'create' %}" role="button">Link</a>
 
 </button> -->
 
 {% else %}
 
-<!-- Information Shown the users who are not logged in -->
+<!-- Information Shown to the users who are not logged in -->
 <div class="container-fluid intro-info-container">
     <div class="row">
         <article class="intro-info">

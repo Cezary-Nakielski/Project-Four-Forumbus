@@ -30,8 +30,9 @@ class PostContent(View):
             },
         )
 
+
 class PostCreate(CreateView):
     model = Post
     form_class = PostForm
     template_name = 'create.html'
-    success_url - '/'
+    success_url = '/'
