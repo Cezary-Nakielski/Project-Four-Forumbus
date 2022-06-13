@@ -32,7 +32,7 @@
             <div class="collapse navbar-collapse" id="navbarMenu">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="">Main Page</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'homepage' %}">Main Page</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
@@ -48,7 +48,7 @@
                     {% endif %}
                 </ul>
             </div>
-            <a class="navbar-brand" href=""><img src="static/images/logo.png" alt="Forumbus logo"
+            <a class="navbar-brand" href="{% url 'homepage' %}"><img src="static/images/logo.png" alt="Forumbus logo"
                     aria-label="Homepage link" class="d-inline-block align-text-top"></a>
         </div>
     </nav>
