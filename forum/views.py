@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.views import generic
+from django.shortcuts import render, get_object_or_404
+from django.views import generic, View
 from .models import Post
 
 
@@ -10,3 +10,16 @@ class PostsList(generic.ListView):
     paginate_by = 9
 
 # Create your views here.
+class PostContent(View):
+
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Post.objects.filter(approved=True)
+        post = get_object_or_404(queryset, slug=slug)
+
+        return render(
+            request,
+            "post_content.html",
+            {
+                "post": post,
+            },
+        )
