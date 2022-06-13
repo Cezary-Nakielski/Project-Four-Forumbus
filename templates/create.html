@@ -4,15 +4,19 @@
 
 {% load crispy_forms_tags %}
 
-<section id="post-creat" class="container-fluid ">
+{% if user.is_authenticated %}
+
+<section id="post-create" class="container-fluid ">
     <div class="row d-flex justify-content-center">
         <h3>Create a Post</h3>
-        <form method="post" style="margin-top: 1.3em;">
-            {{ post_form | crispy }}
+        <form method="post">
+            {{ form | crispy }}
             {% csrf_token %}
             <button type="submit" class="btn btn-lg">Confirm</button>
+            <a href="{% url 'homepage' %}" class="btn btn-default">Cancel</a>
         </form>
     </div>
     </div>
+{% endif %}
 
 {% endblock content %}

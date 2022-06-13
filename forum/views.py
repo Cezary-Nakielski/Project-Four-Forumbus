@@ -36,3 +36,14 @@ class PostCreate(CreateView):
     form_class = PostForm
     template_name = 'create.html'
     success_url = '/'
+
+    def get(self, request, slug, *args, **kwargs):
+
+        return render(
+            request,
+            "create.html",
+            {
+                "post": post,
+                "post_form": PostForm()
+            },
+        )
