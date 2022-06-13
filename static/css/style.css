@@ -1,6 +1,9 @@
 body {
-    background-color: #67696e;
+    background-color: #cacdd4;
+    
 }
+
+/* NAVIGATION STYLING */
 
 .navbar-fixed-top {
     height: 100px;
@@ -17,6 +20,14 @@ body {
     width: auto;
 }
 
+#main-heading {
+    margin-top: 2rem;
+}
+
 .intro-info-container {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.intro-info {
+    font-family: 'Kdam Thmor Pro', sans-serif;
 }
