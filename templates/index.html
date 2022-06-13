@@ -6,21 +6,21 @@
     <h1>Posts</h1>
 </section>
 {% if user.is_authenticated %}
-
+<div class="container-fluid">
+<div class="row">
 <!-- Button shown to logged in users, used to create a post -->
 <a class="btn btn-primary" href="" role="button">Link</a>
-
-</button> -->
-
+</div>
+</div>
 {% else %}
 
 <!-- Information Shown to the users who are not logged in -->
 <div class="container-fluid intro-info-container">
     <div class="row">
-        <article class="intro-info">
-            To create, edit or delete your post, you need to
+        <article class="col intro-info justify-content-center">
+            <p class="text-center">To create, edit or delete your post, you need to
             register. If you haven't done so yet, use the "Join Us" button in the navigation panel at the top of the
-            page.
+            page.</p>
         </article>
     </div>
 </div>

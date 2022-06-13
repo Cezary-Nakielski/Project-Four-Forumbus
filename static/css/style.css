@@ -21,7 +21,7 @@ body {
 }
 
 #main-heading {
-    margin-top: 2rem;
+    margin: 2rem auto;
 }
 
 .intro-info-container {
