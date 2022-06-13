@@ -5,21 +5,20 @@
 <section id="main-heading" class="container-fluid text-center">
     <h1>Posts</h1>
 </section>
-
-<div class="container-fluid intro-info-container">
-    <div class="row">
-        {% if user.is_authenticated %}
-        <!-- <button>
+{% if user.is_authenticated %}
+<!-- <button>
 
 </button> -->
 
 {% else %}
-<article class="intro-info">
-    To create, edit or delete your post or to see the content of another persons post, you need to
-    register.
-    If you haven't done so yet, use the "Join Us" button in the navigation panel at the top of the page.
-</article>
-</div>
+<div class="container-fluid intro-info-container">
+    <div class="row">
+    <article class="intro-info">
+        To create, edit or delete your post or to see the content of another persons post, you need to
+        register.
+        If you haven't done so yet, use the "Join Us" button in the navigation panel at the top of the page.
+    </article>
+    </div>
 </div>
 {% endif %}
 <!-- Post Entries Column -->
