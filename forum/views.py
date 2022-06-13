@@ -9,7 +9,7 @@ class PostsList(generic.ListView):
     template_name = 'index.html'
     paginate_by = 9
 
-# Create your views here.
+
 class PostContent(View):
 
     def get(self, request, slug, *args, **kwargs):
