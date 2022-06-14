@@ -25,7 +25,7 @@ This Full Stack Web Application allows users to share their thoughts which the d
 
 ## Demo
 
-To access deployed website, click <a href="https://forumbus2022.herokuapp.com/" target="_blank"> here. </a>
+To access the deployed website, click <a href="https://forumbus2022.herokuapp.com/" target="_blank"> here. </a>
 
 
 # UX
@@ -90,7 +90,7 @@ Option for the users to delete the post that they have written.
 * Simple design with information placed throughout the website so that the user can intuitively and with ease move around it. 
 * Main page must contain information which explains that in order to access full functionality of the website, the user has to register to do that.
 * User has to receive feedback on changes made by the user.
-* Each page has to contain information which will make the user aware of current login status.
+* Navigation Panel contain information which will make the user aware of current login status. 
 
 
 ## Skeleton
@@ -146,3 +146,206 @@ Option to read content of selected post
 Option to write a post
 Option to edit the post written
 Option to delete the post written
+
+### Features Left to Implement
+
+Option for users to comment on posts
+Option for users to like posts
+Option for users to upload photos and videos
+
+## Technologies Used
+
+- [HTML]
+- [CSS]
+- [Javascript]
+- [Python]
+- [Heroku]
+- [PostgreSQL]
+- [Django] - Python framework
+- [Gunicorn] - Server used by Django to run on Heroku
+- [Dj Database Url] - library used for PostgreSQL
+- [Psycopg2] - PostgreSQL database adapter for the Python
+- [Dj3 Cloudinary Storage] - Django package that provides Cloudinary storage
+
+
+- https://balsamiq.com - to create wireframes
+- https://erdplus.com/ - to crate an ER diagram and Relational Schema
+- https://express.adobe.com/ - to create the logo image
+
+## Testing
+
+### Manual Testing:
+
+Functionality tested according to user stories:
+
+#### As the owner of the site:
+
+| Achieved | Goal |
+| --- | --- |
+| Yes | I would like to be able to approve the posts before they are presented on the site|
+
+#### As the user of the site:
+
+| Achieved | Goal |
+| --- | --- |
+| Yes | I would like to be able to register in order to be able to access full functionality of the application. |
+| Yes | I would like to be able to view the posts list so that I can choose which one to read. |
+| Yes | I would like to be able to see other people's posts. |
+| Yes | I would like to be able to write a post. |
+| Yes | I would like to be able to edit my posts. |
+| Yes | I would like to be able to delete the posts that I have written. |
+
+Tests of messages/feedback reflected to the user caused by action performed by the user:
+
+| Message | Action |
+| --- | --- |
+| Yes | User is informed that he logged out after logging out |
+| Yes | User is informed that he logged in after logging in |
+| Yes | User is informed that account had been created after succesfully creating an account |
+| Yes | User is informed about the result of action after succesfully creating a post |
+| Yes | User is informed about the result of action after succesfully updating a post |
+| Yes | User is informed about the result of action before succesfully deleting a post |
+| Yes | User is told that a post with the same title already exists when the user tries to create a post with already existing title |
+| Yes | Whe creating a post, if the user tries to create a post with empty content or without a title, the usrer is informed that thesefields are required |
+
+After Logging in or logging out the user the user is brought to the main page.
+
+After creating, updating or deleting a post the user is brought to the main page.
+
+User can only create, update or delete posts only when being logged in.
+
+User can only update or delete owned posts.
+
+The website design is responsive and looks decent on all screen sizes.
+
+All buttons function as intended.
+
+
+### Automatic Testing:
+
+- https://validator.w3.org/ - used to validate HTML syntax
+- https://jigsaw.w3.org/css-validator/ - used to validate CSS syntax
+- https://esprima.org/demo/validate.html - used to validate Javascript syntax
+- http://pep8online.com/ - used to validate Python syntax
+- https://search.google.com/test/mobile-friendly - tested for mobile compatibility of the website
+- https://pagespeed.web.dev/?utm_source=psi&utm_medium=redirect - tested for the websites loading speed performance
+
+
+## Bugs
+
+During development I encountered numerous minor bugs caused by mistyping code and missing characters.
+
+One major bug was caused due to Heroku disabling automatic deployment to Github. I used the solution provided my Code Instite, which I found in Slack. - Manually setting up deployment to Heroku through terminal.
+
+Error I encountered - Refused to apply style from static/css/style.css because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.
+Solution I applied - Used {% static 'css/style.css' %} instead of href="static/css/style.css" in base.html.
+
+No known bugs were left to correct.
+
+## Deployment
+
+### Initial Commit
+
+Once I created the project, the app and installed Django and supporting libraries in Gitpod, I created the requirements.txt file with the following command, in terminal:
+- pip install -r requirements.txt
+
+Once logged into Heroku I:
+- Created new Heroku App
+- Added ‘Heroku Postgres’ database to App Resources
+- Copied DATABASE_URL value from Config Vars, in the Settings Tab
+
+In Gitpod, in newly created env.py file I:
+- Imported os library
+- Set environment variables - os.environ["DATABASE_URL"] to the url copied from Heroku
+- Added in a secret key - os.environ["SECRET_KEY"] (Made up string of characters)
+
+In Heroku I:
+- Added the newly created secret key to Config Vars - SECRET_KEY
+
+In settings.py I referenced env.py:
+- import os
+- import dj_database_url
+- 
+- if os.path.isfile("env.py"):
+-   import env
+Then I replaced the secure key - SECRET_KEY = os.environ.get('<new secure key>')
+Then I commented out the the old database section and added the new database section
+
+In terminal I saved all changes and made migrations with the following command:
+- python3 manage.py migrate
+
+Once logged in, from Cloudinary website I:
+- Copied CLOUDINARY_URL
+
+In env.py I:
+- Added Cloudinary URL to env.py
+
+In Heroku I:
+- Added Cloudinary URL to Heroku Config Vars
+- Add DISABLE_COLLECTSTATIC to Heroku Config Vars and set it to 1 (It's only until the deployment)
+
+In settings.py I:
+- Added Cloudinary Libraries to installed apps
+- Inserted code which tells Django to use Cloudinary to store media and static files
+- Linked file to the templates directory in Heroku - TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+- Changed the templates directory to TEMPLATES_DIR
+- Added Heroku Hostname to ALLOWED_HOSTS - ALLOWED_HOSTS = ['forumbus2022.herokuapp.com', 'localhost']
+
+In Gitpod I created 3 new folders in top level directory:
+- media, static, templates
+
+In Procfile I added the following code:
+- web: gunicorn forumbus.wsgi
+
+Due to a security issue, Heroku has disabled automated deployments from GitHub.
+In the Gitpo terminal, I typed:
+- heroku login -i
+- heroku apps
+- heroku git:remote -a forumbus2022
+- git add . && git commit -m "Deploy to Heroku via CLI"
+To push changes to heroku I used the following command:
+- git push heroku main
+
+Before the final deployment, I changed the DEBUG to False in settings.py and removed the DISABLE_COLLECTSTATIC from config vars in Heroku.
+
+## Credits
+
+### Content
+
+- The logo image was generated using - https://express.adobe.com/ 
+
+
+### Acknowledgements
+
+I received inspiration and information necessary for this project from lessons and material provided by Code Institute, video and text tutourials found online as well as my mentor to whom I am very grateful for his patience, understanding and expertise.
+
+ - (https://stackoverflow.com/) Probably the best place to find answers and tips on how to work out solutions for better code
+
+- Wireframes creation tool:
+    - (https://balsamiq.com)
+
+- ER diagram and Ralational Schema creation tool:
+    - (https://erdplus.com/)
+
+- Logo creation tool:
+    - (https://express.adobe.com/)
+
+- Python validation service:
+    - (http://pep8online.com/)
+
+- HTML validation service:
+    - (https://validator.w3.org/)
+
+- CSS validation service:
+    - (https://jigsaw.w3.org/css-validator/)
+
+- Javascript validator:
+    - [Esprima](https://esprima.org/demo/validate.html)
+
+- Webite mobile screen compatibility testing service:
+    - (https://search.google.com/test/mobile-friendly)
+
+- Web application performance testing service:
+    - (https://pagespeed.web.dev/)
+
+* This website was made for educational purposes
