@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render, get_object_or_404
 from django.views import generic, View
 from django.contrib.auth.decorators import login_required
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, DeleteView
 from .models import Post
 from .forms import PostForm
 
@@ -59,4 +59,12 @@ class UpdatePost(UpdateView):
     form_class = PostForm
     template_name_suffix = '_update_form'
     template_name = 'post_update_form.html'
+    success_url = '/'
+
+# Class based view for updating a post
+
+
+class DeletePost(DeleteView):
+    model = Post
+    template_name = 'delete.html'
     success_url = '/'
