@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% if request.user == recipe.author %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h5>Delete Post</h5>
+            <p>This action is irreversible.</p>
+            <form method="POST">
+                {% csrf_token %}
+                <div>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <a href="{% url 'homepage' %}" class="btn">Main Page</a>
+    </div>
+</div>
+
+{% endblock %}
+
+{% endif %}
