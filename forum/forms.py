@@ -5,8 +5,7 @@ from forum.models import Post
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'creator', 'body', )
+        fields = ['title', 'body', ]
 
-        widgets = {
-            'body': forms.Textarea(attrs={'class': 'form-control'}),
-        }
+    def __init__(self, *args, **kwargs):
+        super(PostForm, self).__init__(*args, **kwargs)

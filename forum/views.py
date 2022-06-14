@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import redirect, render, get_object_or_404
 from django.views import generic, View
+from django.contrib.auth.decorators import login_required
 from .models import Post
-
+from .forms import PostForm
 
 # Class based view for displaying list of posts
 
@@ -17,7 +18,7 @@ class PostsList(generic.ListView):
 
 class PostContent(View):
 
-    def get(self, request, slug, *args, **kwargs):
+    def get(self, request, slug):
         queryset = Post.objects.filter(approved=True)
         post = get_object_or_404(queryset, slug=slug)
 
