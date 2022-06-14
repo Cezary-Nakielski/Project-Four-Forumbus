@@ -55,7 +55,10 @@ User Stories:
 
 Admin panel where the owner of the site can approve and manage posts.
 A page where user can register.
-A page which displays posts written by users.
+A page where user can log in.
+A page where user can log out.
+A page which displays a list of posts written by users.
+A page where user can rad the content of a particular post.
 A page where user can edit own post.
 A page where user can delete own post.
 
@@ -64,7 +67,10 @@ A page where user can delete own post.
 
 Option for the owner to approve and manage posts.
 Option for the users to register at the website.
-Option for the users to see posts and choose to see it's content.
+Option for the users to log in to the website.
+Option for the users to log out from the website.
+Option for the users to see posts and choose to read it's content.
+Option for the users to rad content of selected post.
 Option for the users to write a post.
 Option for the users to edit the post that they have written.
 Option for the users to delete the post that they have written.
@@ -82,9 +88,9 @@ Option for the users to delete the post that they have written.
 ### Information Architecture
 
 * Simple design with information placed throughout the website so that the user can intuitively and with ease move around it. 
-* Main page must contain information which explains that in order to access full functionality of the website, the user has to register.
+* Main page must contain information which explains that in order to access full functionality of the website, the user has to register to do that.
 * User has to receive feedback on changes made by the user.
-* Each page has to contain information which will make the user ware of current login status.
+* Each page has to contain information which will make the user aware of current login status.
 
 
 ## Skeleton
@@ -95,8 +101,8 @@ Option for the users to delete the post that they have written.
 * When the user clicks on the Main Page button, it takes the user to the Main Page.
 * When the user clicks the Join Us button, it takes the user to the Sign Up Page.
 * When the user clicks on one of the posts title and is logged in, the user is taken to the paige with post details.
-* When the user clicks on the Log in button, the user is taken to the login page.
-* When the user clicks the Log Out button, the user is logged out and taken to the Main Page.
+* When the user clicks on the Log In button, the user is taken to the login page. After logging in the page takes the user to the main page.
+* When the user clicks the Log Out button, the user is take to the log out page. Then after confirmation is logged out and taken to the main page.
 
 
 ### Interface design
@@ -136,3 +142,5 @@ Option to register at the website
 Option to log in
 Option to log out
 Option to see posts written by other people
+Option to read content of selected post
+Option to write a post
