@@ -1,6 +1,8 @@
 from django.shortcuts import redirect, render, get_object_or_404
 from django.views import generic, View
 from django.contrib.auth.decorators import login_required
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib import messages
 from django.views.generic.edit import UpdateView, DeleteView
 from .models import Post
 from .forms import PostForm
@@ -46,6 +48,7 @@ def create_post(request):
             post_form.title = post_form.title.title()
             post_form.creator = request.user
             post_form.save()
+            messages.success(request, 'The post had been successfully created')
             return redirect('homepage')
 
     return render(request, 'create.html', context={'post_form':
@@ -54,12 +57,13 @@ def create_post(request):
 # Class based view for updating a post
 
 
-class UpdatePost(UpdateView):
+class UpdatePost(SuccessMessageMixin, UpdateView):
     model = Post
     form_class = PostForm
     template_name_suffix = '_update_form'
     template_name = 'post_update_form.html'
     success_url = '/'
+    success_message = "The post had been successfully updated"
 
 # Class based view for updating a post
 
