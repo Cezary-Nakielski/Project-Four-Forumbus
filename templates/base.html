@@ -48,8 +48,8 @@
                     {% endif %}
                 </ul>
             </div>
-            <a class="navbar-brand" href="{% url 'homepage' %}"><img src="{% static 'images/logo.png' %}" alt="Forumbus logo"
-                    aria-label="Homepage link" class="d-inline-block align-text-top"></a>
+            <a class="navbar-brand" href="{% url 'homepage' %}"><img src="{% static 'images/logo.png' %}"
+                    alt="Forumbus logo" aria-label="Homepage link" class="d-inline-block align-text-top"></a>
         </div>
     </nav>
 
@@ -69,7 +69,6 @@
     <!-- Below is where the code from other templates will be injected -->
     <main class="main">
         {% block content %}
-
         {% endblock content %}
     </main>
     <script>
