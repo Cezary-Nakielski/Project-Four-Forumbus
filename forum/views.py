@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render, get_object_or_404
 from django.views import generic, View
 from django.contrib.auth.decorators import login_required
+from django.views.generic.edit import UpdateView
 from .models import Post
 from .forms import PostForm
 
@@ -49,3 +50,13 @@ def create_post(request):
 
     return render(request, 'create.html', context={'post_form':
                   post_form})
+
+# Class based view for Updating a post
+
+
+class UpdatePost(UpdateView):
+    model = Post()
+    form_class = PostForm
+    template_name_suffix = '_update_form'
+    template_name = 'update.html'
+    success_url = '/'
