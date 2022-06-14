@@ -12,9 +12,9 @@ class PostsList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(approved=True).order_by('-time')
     template_name = 'index.html'
-    paginate_by = 9
+    paginate_by = 7
 
-# Class based view for displaying content of posts
+# Class based view for displaying content of a selected post
 
 
 class PostContent(View):
@@ -31,7 +31,7 @@ class PostContent(View):
             },
         )
 
-# Function based view for creating post
+# Function based view for creating a post
 
 
 @login_required
@@ -51,12 +51,12 @@ def create_post(request):
     return render(request, 'create.html', context={'post_form':
                   post_form})
 
-# Class based view for Updating a post
+# Class based view for updating a post
 
 
 class UpdatePost(UpdateView):
-    model = Post()
+    model = Post
     form_class = PostForm
     template_name_suffix = '_update_form'
-    template_name = 'update.html'
+    template_name = 'post_update_form.html'
     success_url = '/'

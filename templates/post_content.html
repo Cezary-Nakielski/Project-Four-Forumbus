@@ -8,7 +8,7 @@
 
 <section id="post-main-content" class="container-fluid ">
     <div class="row d-flex justify-content-center">
-        {% if user.is_authenticated %}
+        {% if request.user == post.creator %}
         <div class="col-sm-12 col-md-6">
             <a class="btn btn-primary" href="#" role="button">Update</a>
             <a class="btn btn-primary" href="#" role="button">Delete</a>
@@ -33,4 +33,4 @@
     </div>
 
 
-    {% endblock content %}
+    {% endblock %}
