@@ -144,3 +144,4 @@ Option to log out
 Option to see posts written by other people
 Option to read content of selected post
 Option to write a post
+Option to edit the post written
