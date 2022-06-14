@@ -29,3 +29,23 @@ class PostContent(View):
                 "post": post,
             },
         )
+
+# Function based view for creating post
+
+
+@login_required
+def create_post(request):
+    post_form = PostForm()
+    print(request.method)
+    if request.method == "POST":
+        post_form = PostForm(request.POST, request.FILES)
+        print(post_form.is_valid())
+        if post_form.is_valid():
+            post_form = post_form.save(commit=False)
+            post_form.title = post_form.title.title()
+            post_form.creator = request.user
+            post_form.save()
+            return redirect('homepage')
+
+    return render(request, 'create.html', context={'post_form':
+                  post_form})
