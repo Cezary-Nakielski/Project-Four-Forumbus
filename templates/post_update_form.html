@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+{% if request.user == post.creator %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <a href="{% url 'post_content' post.slug %}" class="btn btn-light">Cancel</a>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col">
+            <h3>Update Your Post</h3>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div>
+                    <input type="submit" class="btn btn-success" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+    {% else %}
+    <div class="container-fluid text-center">
+        <a href="{% url 'homepage' %}" class="btn">Main Page</a>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}
