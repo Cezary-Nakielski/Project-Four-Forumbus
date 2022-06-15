@@ -2,7 +2,7 @@ body {
     background-color: #cacdd4;
 }
 
-/* NAVIGATION STYLING */
+/* NAVIGATION */
 
 .navbar-fixed-top {
     height: 100px;
@@ -12,8 +12,6 @@ body {
     font-family: 'Lato', sans-serif;
     font-size: large;
 }
-
-
 
 .navbar-brand {
     transform: translateX(-50%);
@@ -44,8 +42,14 @@ body {
 }
 
 .post-creator {
-    font-size: x-large;
+    font-size: large;
 }
+
+.messages-container {
+    margin-top: 2rem;
+}
+
+/* MEDIA QUERIES */
 
 @media (max-width: 768px) {
     .navbar, .nav-container {
