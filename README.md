@@ -51,28 +51,28 @@ User Stories:
 
 ## Scope
 
-### Content Requirements
+### Content Requirements:
 
-Admin panel where the owner of the site can approve and manage posts.
-A page where user can register.
-A page where user can log in.
-A page where user can log out.
-A page which displays a list of posts written by users.
-A page where user can rad the content of a particular post.
-A page where user can edit own post.
+Admin panel where the owner of the site can approve and manage posts.  
+A page where user can register.  
+A page where user can log in.  
+A page where user can log out.  
+A page which displays a list of posts written by users.  
+A page where user can rad the content of a particular post.  
+A page where user can edit own post.  
 A page where user can delete own post.
 
 
-### Functional Requirements
+### Functional Requirements:
 
-Option for the owner to approve and manage posts.
-Option for the users to register at the website.
-Option for the users to log in to the website.
-Option for the users to log out from the website.
-Option for the users to see posts and choose to read it's content.
-Option for the users to rad content of selected post.
-Option for the users to write a post.
-Option for the users to edit the post that they have written.
+Option for the owner to approve and manage posts.  
+Option for the users to register at the website.  
+Option for the users to log in to the website.  
+Option for the users to log out from the website.  
+Option for the users to see posts and choose to read it's content.  
+Option for the users to rad content of selected post.  
+Option for the users to write a post.  
+Option for the users to edit the post that they have written.  
 Option for the users to delete the post that they have written.
 
 
@@ -136,21 +136,21 @@ As part of agile development process basic kanban board within Github Projects w
 
 # Features
 
-### Existing Features
+### Existing Features:
 
-Option to register at the website
-Option to log in
-Option to log out
-Option to see posts written by other people
-Option to read content of selected post
-Option to write a post
-Option to edit the post written
+Option to register at the website  
+Option to log in  
+Option to log out  
+Option to see posts written by other people  
+Option to read content of selected post  
+Option to write a post  
+Option to edit the post written  
 Option to delete the post written
 
-### Features Left to Implement
+### Features Left to Implement:
 
-Option for users to comment on posts
-Option for users to like posts
+Option for users to comment on posts  
+Option for users to like posts  
 Option for users to upload photos and videos
 
 ## Technologies Used
@@ -239,7 +239,7 @@ During development I encountered numerous minor bugs caused by mistyping code an
 
 One major bug was caused due to Heroku disabling automatic deployment to Github. I used the solution provided by Code Institute, which I found in Slack. - Manually setting up deployment to Heroku through terminal.
 
-Error I encountered - Refused to apply style from static/css/style.css because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.<br />
+Error I encountered - Refused to apply style from static/css/style.css because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.  
 Solution I applied - Used {% static 'css/style.css' %} instead of href="static/css/style.css" in base.html.
 
 Since pylint in Gitpod did not read docstrings properly, I opted for using one-line comments.
@@ -272,7 +272,7 @@ In settings.py I referenced env.py:
 - 
 - if os.path.isfile("env.py"):
 -   import env
-Then I replaced the secure key - SECRET_KEY = os.environ.get('<new secure key>')
+Then I replaced the secure key - SECRET_KEY = os.environ.get('<new secure key>')  
 Then I commented out the the old database section and added the new database section
 
 In terminal I saved all changes and made migrations with the following command:
@@ -301,7 +301,7 @@ In Gitpod I created 3 new folders in top level directory:
 In Procfile I added the following code:
 - web: gunicorn forumbus.wsgi
 
-Due to a security issue, Heroku has disabled automated deployments from GitHub.
+Due to a security issue, Heroku has disabled automated deployments from GitHub.  
 In the Gitpod terminal, I typed:
 - heroku login -i
 - heroku apps
