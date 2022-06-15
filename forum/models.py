@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from autoslug import AutoSlugField
 
+# Post model
+
 
 class Post(models.Model):
     title = models.CharField(max_length=100, unique=True)
