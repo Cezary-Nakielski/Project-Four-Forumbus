@@ -15,11 +15,11 @@
                     <div class="col-6">
                         {{ post_form.title|as_crispy_field }}
                     </div>
-                <div class="row justify-content-center">
-                    <div class="col-6">
-                        {{ post_form.body|as_crispy_field }}
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            {{ post_form.body|as_crispy_field }}
+                        </div>
                     </div>
-                </div>
                 </div>
                 <button type="submit" class="btn btn-lg btn-success">Confirm</button>
                 <a href="{% url 'homepage' %}" class="btn btn-secondary">Cancel</a>
