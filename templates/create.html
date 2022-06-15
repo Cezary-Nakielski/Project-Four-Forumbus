@@ -3,24 +3,26 @@
 {% if user.is_authenticated %}
 {% block content %}
 
-<div id="post-create" class="container-fluid ">
+<div id="post-create" class="container-fluid text-center">
     <h3>Create a Post</h3>
     <p>Once the post is created, it has to be reviewed by the website admin before it is going to be published.</p>
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col">
             <form action="{% url 'create' %}" method="POST" enctype="multipart/form-data">
                 {{ form | crispy }}
                 {% csrf_token %}
-                <div class="row">
+                <div class="row justify-content-center">
                     <div class="col-6">
                         {{ post_form.title|as_crispy_field }}
                     </div>
+                <div class="row justify-content-center">
                     <div class="col-6">
                         {{ post_form.body|as_crispy_field }}
                     </div>
                 </div>
-                <button type="submit" class="btn btn-lg">Confirm</button>
-                <a href="{% url 'homepage' %}" class="btn btn-default">Cancel</a>
+                </div>
+                <button type="submit" class="btn btn-lg btn-success">Confirm</button>
+                <a href="{% url 'homepage' %}" class="btn btn-secondary">Cancel</a>
             </form>
         </div>
     </div>
