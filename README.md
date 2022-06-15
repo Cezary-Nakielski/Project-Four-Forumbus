@@ -159,18 +159,18 @@ Option for users to upload photos and videos
 - [CSS]
 - [Javascript]
 - [Python]
-- [Heroku]
-- [PostgreSQL]
+- [Heroku] - Cloud platform used for hosting the application
+- [PostgreSQL] - Relational database management system
 - [Django] - Python framework
 - [Gunicorn] - Server used by Django to run on Heroku
-- [Dj Database Url] - library used for PostgreSQL
+- [Dj Database Url] - Library used for PostgreSQL
 - [Psycopg2] - PostgreSQL database adapter for the Python
 - [Dj3 Cloudinary Storage] - Django package that provides Cloudinary storage
 
 
-- https://balsamiq.com - to create wireframes
-- https://erdplus.com/ - to crate an ER diagram and Relational Schema
-- https://express.adobe.com/ - to create the logo image
+- https://balsamiq.com - used to create wireframes
+- https://erdplus.com/ - used to crate an ER diagram and Relational Schema
+- https://express.adobe.com/ - used to create the logo image
 
 ## Testing
 
@@ -239,6 +239,8 @@ One major bug was caused due to Heroku disabling automatic deployment to Github.
 
 Error I encountered - Refused to apply style from static/css/style.css because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.
 Solution I applied - Used {% static 'css/style.css' %} instead of href="static/css/style.css" in base.html.
+
+Since pylint in Gitpod did not read docstrings properly, I opted for using one-line comments.
 
 No known bugs were left to correct.
 
