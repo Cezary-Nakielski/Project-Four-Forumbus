@@ -208,6 +208,8 @@ Tests of messages/feedback reflected to the user caused by action performed by t
 | Yes | User is told that a post with the same title already exists when the user tries to create a post with already existing title |
 | Yes | Whe creating a post, if the user tries to create a post with empty content or without a title, the user is informed that these fields are required |
 
+User is guided with alerts during the processes of registration, login and log out. Operations which are not permitted are communicated.
+
 After Logging in or logging out the user the user is brought to the main page.
 
 After creating, updating or deleting a post the user is brought to the main page.
