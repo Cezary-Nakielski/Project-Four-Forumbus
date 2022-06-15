@@ -107,7 +107,7 @@ Option for the users to delete the post that they have written.
 
 ### Interface design
 
-Placement of elements throughout the website needs to make it easy to access, understand, and use in order to maximise usability and user experience.
+Placement of elements throughout the website needs to make it easy to access, understand, and use in order to maximize usability and user experience.
 
 
 ### Wireframes
@@ -126,7 +126,7 @@ Relational schema for the project can be found <a href="https://github.com/Cezar
 
 ##  Surface
 
-* The interface content arrangement, colouring, typography and navigation was designed with minimalist style and approach in mind.
+* The interface content arrangement, coloring, typography and navigation was designed with minimalist style and approach in mind.
 
 
 # Agile Development Process
@@ -201,12 +201,12 @@ Tests of messages/feedback reflected to the user caused by action performed by t
 | --- | --- |
 | Yes | User is informed that he logged out after logging out |
 | Yes | User is informed that he logged in after logging in |
-| Yes | User is informed that account had been created after succesfully creating an account |
-| Yes | User is informed about the result of action after succesfully creating a post |
-| Yes | User is informed about the result of action after succesfully updating a post |
-| Yes | User is informed about the result of action before succesfully deleting a post |
+| Yes | User is informed that account had been created after successfully creating an account |
+| Yes | User is informed about the result of action after successfully creating a post |
+| Yes | User is informed about the result of action after successfully updating a post |
+| Yes | User is informed about the result of action before successfully deleting a post |
 | Yes | User is told that a post with the same title already exists when the user tries to create a post with already existing title |
-| Yes | Whe creating a post, if the user tries to create a post with empty content or without a title, the usrer is informed that thesefields are required |
+| Yes | Whe creating a post, if the user tries to create a post with empty content or without a title, the user is informed that these fields are required |
 
 After Logging in or logging out the user the user is brought to the main page.
 
@@ -235,9 +235,9 @@ All buttons function as intended.
 
 During development I encountered numerous minor bugs caused by mistyping code and missing characters.
 
-One major bug was caused due to Heroku disabling automatic deployment to Github. I used the solution provided my Code Instite, which I found in Slack. - Manually setting up deployment to Heroku through terminal.
+One major bug was caused due to Heroku disabling automatic deployment to Github. I used the solution provided by Code Institute, which I found in Slack. - Manually setting up deployment to Heroku through terminal.
 
-Error I encountered - Refused to apply style from static/css/style.css because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.
+Error I encountered - Refused to apply style from static/css/style.css because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.<br />
 Solution I applied - Used {% static 'css/style.css' %} instead of href="static/css/style.css" in base.html.
 
 Since pylint in Gitpod did not read docstrings properly, I opted for using one-line comments.
@@ -300,7 +300,7 @@ In Procfile I added the following code:
 - web: gunicorn forumbus.wsgi
 
 Due to a security issue, Heroku has disabled automated deployments from GitHub.
-In the Gitpo terminal, I typed:
+In the Gitpod terminal, I typed:
 - heroku login -i
 - heroku apps
 - heroku git:remote -a forumbus2022
@@ -319,14 +319,14 @@ Before the final deployment, I changed the DEBUG to False in settings.py and rem
 
 ### Acknowledgements
 
-I received inspiration and information necessary for this project from lessons and material provided by Code Institute, video and text tutourials found online as well as my mentor to whom I am very grateful for his patience, understanding and expertise.
+I received inspiration and information necessary for this project from lessons and material provided by Code Institute, video and text tutorials found online as well as my mentor to whom I am very grateful for his patience, understanding and expertise.
 
  - (https://stackoverflow.com/) Probably the best place to find answers and tips on how to work out solutions for better code
 
 - Wireframes creation tool:
     - (https://balsamiq.com)
 
-- ER diagram and Ralational Schema creation tool:
+- ER diagram and Relational Schema creation tool:
     - (https://erdplus.com/)
 
 - Logo creation tool:
