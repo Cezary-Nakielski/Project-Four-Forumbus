@@ -5,7 +5,7 @@
     <h1>{{ post.title }}</h1>
 </section>
 
-<section class="container-fluid ">
+<section class="container-fluid">
     <div class="row">
         {% if request.user == post.creator %}
         <div class="col">
@@ -29,6 +29,6 @@
             </div>
         </div>
     </div>
-    </div>
 </section>
+
 {% endblock %}

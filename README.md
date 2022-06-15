@@ -184,6 +184,9 @@ Functionality tested according to user stories:
 | --- | --- |
 | Yes | I would like to be able to approve the posts before they are presented on the site|
 
+The owner of the website can access the admin panel by adding /admin at the end of homepage url.
+There, the owner has to put in admin credentials provided by the developer.
+
 #### As the user of the site:
 
 | Achieved | Goal |
@@ -352,4 +355,4 @@ I received inspiration and information necessary for this project from lessons a
 - Web application performance testing service:
     - (https://pagespeed.web.dev/)
 
-* This website was made for educational purposes
+This website was made for educational purposes
