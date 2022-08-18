@@ -20,3 +20,17 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Profile(models.Model):
+    username = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="forum_profiles"
+    )
+    first_name = models.CharField(max_length=50, null=False, blank=False)
+    surname = models.CharField(max_length=50, null=False, blank=False)
+    age = models.IntegerField(null=False, blank=False)
+    email = models.EmailField(max_length=100, null=False, blank=False)
+    location = models.CharField(max_length=100, null=False, blank=False)
+
+    def __str__(self):
+        return self.username
