@@ -8,4 +8,8 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ('approved', 'time')
 
 
-admin.site.register(Profile)
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ('username', 'location')
+    list_filter = ('age', 'location')
+    search_fields = ('username', 'first_name', 'surname', 'email', 'location')

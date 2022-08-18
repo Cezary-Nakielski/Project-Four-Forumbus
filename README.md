@@ -48,7 +48,6 @@ User Stories:
 * As a user of the website, I would like to be able to edit my posts.
 * As a user of the website, I would like to be able to delete the posts that I have written.
 
-
 ## Scope
 
 ### Content Requirements:
