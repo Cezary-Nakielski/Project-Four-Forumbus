@@ -21,9 +21,11 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+# Profile model
+
 
 class Profile(models.Model):
-    username = models.ForeignKey(
+    username = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name="forum_profiles"
     )
     first_name = models.CharField(max_length=50, null=False, blank=False)
