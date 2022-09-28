@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'crispy_forms',
     'forum',
+    'sweetify',
 ]
 
 SITE_ID = 1
@@ -75,6 +76,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
 
 ROOT_URLCONF = 'forumbus.urls'
 
